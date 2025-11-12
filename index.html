@@ -4,13 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Portfolio Luca Bertaina</title>
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <section class="Presentation__Page">
-        <h1>Hello I am Luca Bertaina</h1>
-        <h1>Web and Frontend Developer</h1>
-        <button class="btn__ligth-mode">Ligth</button>
+       <div class="text__container">
+            <h1>Luca Bertaina</h1>
+            <h2>Web and FrontEnd Dev</h2>
+            <div class="line__decor"></div>
+        </div>
+
+        <button id="themeToggle" class="btn__ligth-mode">
+            <span class="icon">🌙</span>
+        </button>
     </section>
 
     <section class="Description__Page">
@@ -23,29 +29,62 @@
         <img src="" alt="">
     </section>
 
-    <section class="Abilitys">
-        <h2>Abilitys</h2>
-        <div class=" html">
+    <section class="skills-section">
+        <div class="skill-card active" data-skill="html">
+            <div class="skill-header">
+            <img src="html-logo.svg" alt="HTML Logo">
             <h3>HTML</h3>
-            <p>My knowledge of HTML goes back to high school, where I first learned the basics and understood how everything is structured. Later, at UTN University, I was able to strengthen and deepen my skills with this tool, gaining a more complete understanding of web development and how to build well-structured, functional websites.</p>
-        </div>
-        <div class=" css">
-            <h3>CSS</h3>
-            <p></p>
-        </div>
-        <div class=" js">
-            <h3>JavaScript</h3>
-            <p></p>
+            </div>
+            <div class="skill-content">
+            <p>Conocimiento sólido en estructura semántica, formularios y accesibilidad. Aprendido en cursos de desarrollo web y proyectos personales.</p>
+            </div>
         </div>
 
+        <div class="skill-card" data-skill="css">
+            <div class="skill-header">
+            <img src="css-logo.svg" alt="CSS Logo">
+            <h3>CSS</h3>
+            </div>
+            <div class="skill-content">
+            <p>Diseños modernos con flexbox, grid y animaciones. Estilo consistente entre temas claro y oscuro.</p>
+            </div>
+        </div>
+
+        <div class="skill-card" data-skill="js">
+            <div class="skill-header">
+            <img src="js-logo.svg" alt="JavaScript Logo">
+            <h3>JavaScript</h3>
+            </div>
+            <div class="skill-content">
+            <p>Conocimientos en DOM, eventos, fetch API y manipulación dinámica del contenido.</p>
+            </div>
+        </div>
     </section>
 
-    <section class="Proyects">
-        <h2>Proyects</h2>
+    <section class="projects-section" id="projects">
+        <h2 class="section-title">Proyectos</h2>
+
+        <div class="project">
+            <h3 class="project-title">Proyecto 1</h3>
+            <div class="project-gallery">
+            <img src="img/proyecto1-1.png" alt="Proyecto 1 imagen 1">
+            <img src="img/proyecto1-2.png" alt="Proyecto 1 imagen 2">
+            <img src="img/proyecto1-3.png" alt="Proyecto 1 imagen 3">
+            </div>
+        </div>
+
+        <div class="project">
+            <h3 class="project-title">Proyecto 2</h3>
+            <div class="project-gallery">
+            <img src="img/proyecto2-1.png" alt="Proyecto 2 imagen 1">
+            <img src="img/proyecto2-2.png" alt="Proyecto 2 imagen 2">
+            </div>
+        </div>
+
     </section>
 
     <footer><p>Contactame!</p></footer>
 
 </body>
-<script src="/script.js"></script>
+<script src="script.js"></script>
 </html>

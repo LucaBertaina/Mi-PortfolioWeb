@@ -1,114 +1,328 @@
+@import url('https://fonts.googleapis.com/css2?family=Megrim&family=Inconsolata:wght@300;400;700&family=Orbitron:wght@400;700&display=swap');
+
 :root {
   --color-principal: #B978C5;
   --color-secundario: #803C8E;
-  --color-terciario:#501B66;
+  --color-terciario: #501B66;
   --color-texto-claro: #BA75C7;
-  --color-texto-oscuro:#460b5f;
-  --fondo-oscuro: rgb(46, 36, 51);
-  --fondo-claro: #d4c0e0;
+  --color-texto-oscuro: #f1e5ff;
+  --fondo-oscuro: #1f1f1f;
+  --fondo-claro: #f1e5ff;
+  --color-decor: #9b6bf2;
+  --color-hover: #9c6bff;
+}
 
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-body{
-    background-color: var(--fondo-oscuro);
-    color: var(--color-texto-claro);
-    font-family: 'Consolas', 'Courier New', 'Lucida Console', monospace;
-}
+
 html, body {
   height: 100%;
   scroll-behavior: smooth;
-  scroll-snap-type: y mandatory; /* 👈 Efecto "diapositiva" */
-  font-family: 'Consolas', 'Courier New', 'Lucida Console', monospace;
-  background-color: var(--fondo-oscuro);
-  color: var(--color-texto-claro);
+  scroll-snap-type: y mandatory; 
+  font-family: 'Inconsolata', monospace;
 }
 
+body {
+  background-color: var(--fondo-oscuro);
+  color: var(--color-texto-claro);
+  transition: background-color 0.4s, color 0.4s;
+}
 
-section {
-  height: 100vh; 
+/* ------------------ */
+/*   Light Mode Vars  */
+/* ------------------ */
+body.light-mode {
+  --color-principal: #27134e;
+  --color-secundario: #534368;
+  --color-terciario: #100127;
+  --color-texto-claro: #3a1658;
+  --color-texto-oscuro: #1a0c2b;
+  --fondo-oscuro: #f4efff;
+  --fondo-claro: #fff;
+  --color-decor: #6f43d6;
+  --color-hover: #7e57c2;
+}
+
+/* ------------------ */
+/*   Light Mode Btn   */
+/* ------------------ */
+.btn__light-mode {
+  position: absolute;
+  bottom: 30px;
+  right: 40px;
+  background: var(--color-principal);
+  border: none;
+  border-radius: 30px;
+  color: var(--fondo-claro);
+  font-family: 'Inconsolata', monospace;
+  font-size: 1rem;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn__light-mode:hover {
+  background: var(--color-secundario);
+  color: var(--color-texto-claro);
+  box-shadow: 0 0 10px var(--color-principal);
+}
+
+/* ==============================
+   Presentation_Page
+============================== */
+.Presentation__Page {
+  min-height: 100vh;
+  scroll-snap-align: start;
+  background-color: var(--fondo-oscuro);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  scroll-snap-align: start; 
-  padding: 40px;
-}
-
-
-.Presentation__Page {
-  background: linear-gradient(135deg, var(--color-terciario), var(--color-secundario));
-  color: var(--fondo-claro);
+  position: relative;
   text-align: center;
+  color: var(--color-decor);
+  letter-spacing: 3px;
 }
 
 .Presentation__Page h1 {
   font-size: 3rem;
-  margin: 10px 0;
-  text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+  font-weight: 700;
+  font-family: 'Megrim', cursive;
 }
 
+.Presentation__Page h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-top: 10px;
+  font-family: 'Megrim', cursive;
+}
 
+.line__decor {
+  width: 150px;
+  height: 3px;
+  background-color: var(--color-decor);
+  margin-top: 40px;
+  border-radius: 2px;
+  position: relative;
+}
+
+.line__decor::after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 20px;
+  width: 120px;
+  height: 2px;
+  background-color: var(--color-decor);
+  opacity: 0.7;
+}
+
+.btn__ligth-mode{
+  
+}
+
+/* ==============================
+   Description_Page
+============================== */
 .Description__Page {
   background-color: var(--fondo-oscuro);
-  text-align: center;
-  line-height: 1.8;
-  max-width: 900px;
-  margin: auto;
+  color: var(--color-texto-claro);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  height: 100vh;
+  scroll-snap-align: start;
+  padding: 40px;
+}
+
+.Description__Page .text__about {
+  max-width: 500px;
 }
 
 .Description__Page h2 {
-  color: var(--color-principal);
-  margin-bottom: 20px;
+  font-family: 'Megrim', cursive;
+  font-size: 2.2rem;
+  color: var(--color-decor);
+  margin-bottom: 15px;
+  letter-spacing: 3px;
 }
 
 .Description__Page p {
-  color: var(--fondo-claro);
+  color: var(--color-texto-claro);
+  font-size: 1.1rem;
+  line-height: 1.6;
 }
 
-.Abilitys {
-  background-color: var(--color-terciario);
-  padding: 80px 20px;
+.Description__Page .img__about {
+  background-color: var(--color-decor);
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.Abilitys h2 {
-  color: var(--color-principal);
-  margin-bottom: 20px;
-  text-align: center;
+.Description__Page .img__about::before {
+  content: "👤";
+  font-size: 3rem;
+  color: var(--fondo-oscuro);
 }
 
-.Abilitys div {
-  max-width: 800px;
-  margin: 20px auto;
+/* ==============================
+   Abilitys
+============================== */
+.skills-section {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 1rem;
+  padding: 2rem;
   background-color: var(--fondo-oscuro);
-  padding: 20px;
-  border-radius: 8px;
-  border-left: 4px solid var(--color-principal);
+  color: var(--color-texto-claro);
+  font-family: 'Inconsolata', monospace;
+  height: 100vh;
+  scroll-snap-align: start;
+  transition: background-color 0.3s ease;
 }
 
-.Abilitys h3 {
-  color: var(--color-secundario);
-  margin-bottom: 10px;
-}
-
-.Abilitys p {
+.skill-card {
+  flex: 1;
+  background: var(--color-secundario);
+  border-radius: 2rem;
   color: var(--fondo-claro);
-}
-
-
-.Proyects {
-  background-color: var(--color-secundario);
-  color: var(--fondo-claro);
-  text-align: center;
+  padding: 1rem;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.4s ease;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
+.skill-card:hover,
+.skill-card.active {
+  flex: 3;
+  background: var(--color-hover);
+  box-shadow: 0 0 20px rgba(156, 107, 255, 0.5);
+}
 
+.skill-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
+
+.skill-header img {
+  width: 50px;
+  height: 50px;
+}
+
+.skill-content {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  margin-top: 1rem;
+}
+
+.skill-card.active .skill-content {
+  opacity: 1;
+  max-height: 200px;
+}
+
+.skill-header h3 {
+  font-family: 'Megrim', cursive;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+/* ==============================
+   Projects Section
+============================== */
+.projects-section {
+  background-color: var(--fondo-oscuro);
+  color: var(--color-texto-claro);
+  padding: 3rem 2rem;
+  font-family: 'Inconsolata', monospace;
+  scroll-snap-align: none;
+  overflow-y: auto;
+  max-height: 100vh;
+}
+
+.section-title {
+  font-family: 'Megrim', cursive;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: left;
+  border-bottom: 3px solid var(--color-principal);
+  width: fit-content;
+  padding-bottom: 0.5rem;
+  letter-spacing: 2px;
+}
+
+.project {
+  margin-bottom: 3rem;
+}
+
+.project-title {
+  font-family: 'Inconsolata', monospace;
+  font-size: 1.4rem;
+  color: var(--color-decor);
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.project-title::after {
+  content: "";
+  display: block;
+  width: 40%;
+  height: 2px;
+  background: var(--color-secundario);
+  margin-top: 0.5rem;
+}
+
+.project-gallery {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 0.5rem;
+}
+
+.project-gallery::-webkit-scrollbar {
+  height: 8px;
+}
+
+.project-gallery::-webkit-scrollbar-thumb {
+  background: var(--color-secundario);
+  border-radius: 4px;
+}
+
+.project-gallery img {
+  flex: 0 0 auto;
+  width: 280px;
+  height: 200px;
+  border-radius: 2rem;
+  background: var(--fondo-claro);
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px var(--color-decor);
+}
+
+/* ==============================
+   FOOTER
+============================== */
 footer {
   background-color: var(--color-terciario);
   color: var(--color-texto-oscuro);
@@ -116,4 +330,3 @@ footer {
   padding: 20px;
   font-size: 0.9rem;
 }
-
