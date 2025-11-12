@@ -21,7 +21,7 @@
 html, body {
   height: 100%;
   scroll-behavior: smooth;
-  scroll-snap-type: y mandatory; 
+  scroll-snap-type: y mandatory;
   font-family: 'Inconsolata', monospace;
 }
 
@@ -29,6 +29,10 @@ body {
   background-color: var(--fondo-oscuro);
   color: var(--color-texto-claro);
   transition: background-color 0.4s, color 0.4s;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 /* ------------------ */
@@ -38,7 +42,7 @@ body.light-mode {
   --color-principal: #27134e;
   --color-secundario: #534368;
   --color-terciario: #100127;
-  --color-texto-claro: #3a1658;
+  --color-texto-claro: #662799;
   --color-texto-oscuro: #1a0c2b;
   --fondo-oscuro: #f4efff;
   --fondo-claro: #fff;
@@ -101,7 +105,7 @@ body.light-mode {
 }
 
 .line__decor {
-  width: 150px;
+  width: 60%;
   height: 3px;
   background-color: var(--color-decor);
   margin-top: 40px;
@@ -114,14 +118,29 @@ body.light-mode {
   position: absolute;
   top: 6px;
   left: 20px;
-  width: 120px;
+  width: 50%;
   height: 2px;
   background-color: var(--color-decor);
   opacity: 0.7;
 }
 
-.btn__ligth-mode{
-  
+/* Hover: invierte fondo y texto */
+.btn__light-mode {
+  background-color: var(--color-terciario);
+  color: var(--color-texto-claro);
+  border: 2px solid var(--color-decor);
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn__light-mode:hover {
+  background-color: var(--color-texto-oscuro);
+  color: var(--color-principal);
+  border-color: var(--color-hover);
+  transform: scale(1.05);
 }
 
 /* ==============================
@@ -171,6 +190,29 @@ body.light-mode {
   content: "👤";
   font-size: 3rem;
   color: var(--fondo-oscuro);
+}
+
+@media (max-width: 900px) {
+  .Description__Page {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: auto;
+    padding: 2rem 1rem;
+  }
+
+  .Description__Page .img__about {
+    width: 120px;
+    height: 120px;
+  }
+
+  .Description__Page h2 {
+    font-size: 1.8rem;
+  }
+
+  .Description__Page p {
+    font-size: 1rem;
+  }
 }
 
 /* ==============================
@@ -243,6 +285,48 @@ body.light-mode {
   letter-spacing: 1px;
 }
 
+@media (max-width: 900px) {
+  .skills-section {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+
+  .skill-card {
+    width: 100%;
+    max-width: 400px;
+    flex: none;
+  }
+
+  .skill-card.active {
+    flex: none;
+    transform: scale(1.02);
+  }
+
+  .skill-header {
+    justify-content: center;
+  }
+
+  .skill-content {
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .skill-header img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .skill-header h3 {
+    font-size: 1.2rem;
+  }
+
+  .skill-content {
+    font-size: 0.95rem;
+  }
+}
+
 /* ==============================
    Projects Section
 ============================== */
@@ -251,9 +335,8 @@ body.light-mode {
   color: var(--color-texto-claro);
   padding: 3rem 2rem;
   font-family: 'Inconsolata', monospace;
-  height: 100vh;
+  min-height: 100vh;
   scroll-snap-align: start;
-  max-height: 100vh;
 }
 
 .section-title {
@@ -331,4 +414,30 @@ footer {
   text-align: center;
   padding: 20px;
   font-size: 0.9rem;
+  border-top: 2px solid var(--color-principal);
+  scroll-snap-align: end;
+  position: relative;
+  z-index: 10;
 }
+
+/* ==============================
+   SCROLL Y ESTRUCTURA GLOBAL
+============================== */
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+
+section {
+  flex-shrink: 0;
+  min-height: 100vh;
+  scroll-snap-align: start;
+}
+
+@media (max-width: 900px) {
+  footer {
+    font-size: 0.8rem;
+    padding: 15px;
+  }
+}
+

@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const body = document.body;
 
-  const themeBtn = document.querySelector('.btn__light-mode') || document.getElementById('themeToggle');
+  const themeBtn =  document.getElementById('themeToggle');
 
   function updateThemeButton() {
     if (!themeBtn) return;
