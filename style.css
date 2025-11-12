@@ -251,8 +251,8 @@ body.light-mode {
   color: var(--color-texto-claro);
   padding: 3rem 2rem;
   font-family: 'Inconsolata', monospace;
-  scroll-snap-align: none;
-  overflow-y: auto;
+  height: 100vh;
+  scroll-snap-align: start;
   max-height: 100vh;
 }
 
@@ -294,6 +294,7 @@ body.light-mode {
   overflow-x: auto;
   scroll-behavior: smooth;
   padding-bottom: 0.5rem;
+  margin: 1rem;
 }
 
 .project-gallery::-webkit-scrollbar {
@@ -310,6 +311,7 @@ body.light-mode {
   width: 280px;
   height: 200px;
   border-radius: 2rem;
+  margin: 1rem 0;
   background: var(--fondo-claro);
   object-fit: cover;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
