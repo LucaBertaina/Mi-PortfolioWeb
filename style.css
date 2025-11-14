@@ -50,9 +50,7 @@ body.light-mode {
   --color-hover: #7e57c2;
 }
 
-/* ------------------ */
-/*   Light Mode Btn   */
-/* ------------------ */
+
 .btn__light-mode {
   position: absolute;
   bottom: 30px;

@@ -55,8 +55,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --------- DEBUG: mostrar errores útiles si algo falla (opcional) ----------
-  // Si querés ver si algo no se encontró, descomentá estas líneas:
-  // if (!themeBtn) console.warn('No theme button found (.btn__light-mode or #themeToggle). Theme toggle disabled.');
-  // if (!skillCards.length) console.warn('No .skill-card elements found. Accordion disabled.');
 });
